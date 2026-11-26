@@ -14,6 +14,7 @@ from dotenv import load_dotenv
 from database import init_db
 from routes.auth import router as auth_router
 from routes.users import router as users_router
+from routes.upload import router as upload_router
 
 load_dotenv()
 
@@ -54,6 +55,7 @@ app.add_middleware(
 
 app.include_router(auth_router)        # /auth/*
 app.include_router(users_router)       # /users/auth/*
+app.include_router(upload_router)      # /upload/*
 
 # ── Health check ───────────────────────────────────────────────────────────────
 
